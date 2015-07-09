@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -18,7 +18,7 @@ package com.jitlogic.zorka.common.zico;
 
 import com.jitlogic.zorka.common.stats.AgentDiagnostics;
 import com.jitlogic.zorka.common.tracedata.SymbolicRecord;
-import com.jitlogic.zorka.common.tracedata.TraceOutput;
+import com.jitlogic.zorka.common.tracedata.TraceStreamOutput;
 import com.jitlogic.zorka.common.tracedata.TraceWriter;
 import com.jitlogic.zorka.common.util.ZorkaAsyncThread;
 import com.jitlogic.zorka.common.util.ZorkaLog;
@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author rafal.lewczuk@jitlogic.com
  */
-public class ZicoTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements TraceOutput {
+public class ZicoTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements TraceStreamOutput {
 
     private static ZorkaLog log = ZorkaLogger.getLog(ZicoTraceOutput.class);
 
@@ -234,5 +234,4 @@ public class ZicoTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements
             log.error(ZorkaLogger.ZCL_STORE, "Error disconnecting " + conn.getAddr() + ":" + conn.getPort(), e);
         }
     }
-
 }

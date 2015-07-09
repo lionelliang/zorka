@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -41,7 +41,7 @@ public class FressianTraceWriter implements MetadataChecker, TraceWriter {
 
     BitVector symbolsSent = new BitVector(), metricsSent = new BitVector(16), templatesSent = new BitVector(16);
 
-    private TraceOutput output;
+    private TraceStreamOutput output;
 
     private OutputStream os;
 
@@ -62,7 +62,7 @@ public class FressianTraceWriter implements MetadataChecker, TraceWriter {
 
 
     @Override
-    public void setOutput(TraceOutput output) {
+    public void setOutput(TraceStreamOutput output) {
         this.output = output;
     }
 

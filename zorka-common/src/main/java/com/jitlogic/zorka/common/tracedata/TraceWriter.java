@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -35,7 +35,7 @@ public interface TraceWriter {
      *
      * @param output trace output object
      */
-    void setOutput(TraceOutput output);
+    void setOutput(TraceStreamOutput output);
 
     /**
      * Resets internal state of trace writer. This clears internal state

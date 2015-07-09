@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -30,7 +30,7 @@ public class NagiosJmxCommandUnitTest extends ZorkaFixture {
         NagiosJmxCommand cmd = (NagiosJmxCommand)
             nagiosLib.jmxscan(
               zorka.query("test", "test:type=TestJmx,*", "name").get("Nom")
-                .metric(perfmon.metric("TEST", "B"))
+                .metric(perfmon.metric("TEST", "TEST", "B"))
         ).withSummaryLine("TEST ${STATUS} - test item ${ATTR.name} ${LVAL0} ${UNIT0}; ")
          .withFirstResult().withLabel("${name}")
          .withPerfLine("${LABEL}=${LVAL0}${UNIT0};${LVAL0}");
@@ -49,7 +49,7 @@ public class NagiosJmxCommandUnitTest extends ZorkaFixture {
         NagiosJmxCommand cmd = (NagiosJmxCommand)
                 nagiosLib.jmxscan(
                         zorka.query("test", "test:type=TestJmx,*", "name").get("Nom")
-                                .metric(perfmon.metric("TEST", "B"))
+                                .metric(perfmon.metric("TEST", "TEST", "B"))
                 ).withSummaryLine("TEST ${STATUS} - test item ${ATTR.name} ${LVAL0} ${UNIT0};")
                         .withFirstResult().withLabel("${name}")
                         .withPerfLine("${LABEL}=${LVAL0}${UNIT0};${LVAL0}");
@@ -79,7 +79,7 @@ public class NagiosJmxCommandUnitTest extends ZorkaFixture {
         NagiosJmxCommand cmd = (NagiosJmxCommand)
                 nagiosLib.jmxscan(
                     zorka.query("test", "test:type=TestJmx,*", "name").get("Nom")
-                         .metric(perfmon.metric("TEST", "B"))
+                         .metric(perfmon.metric("TEST", "TEST", "B"))
                 ).withSummaryLine("TEST ${STATUS} - test items summary ${LVAL0} ${UNIT0}; ")
                  .withLabel("${name}").withSumResult("sum")
                  .withTextLine("${ATTR.name} ${LVAL0} ${UNIT0}; ")
@@ -106,7 +106,7 @@ public class NagiosJmxCommandUnitTest extends ZorkaFixture {
         NagiosJmxCommand cmd = (NagiosJmxCommand)
                 nagiosLib.jmxscan(
                         zorka.query("test", "test:type=TestJmx,*", "name").get("Nom")
-                                .metric(perfmon.metric("TEST", "B"))
+                                .metric(perfmon.metric("TEST", "TEST", "B"))
                 ).withSummaryLine("TEST ${STATUS} - test item ${ATTR.name} ${LVAL0} ${UNIT0}; ")
                         .withLabel("${name}").withFilterResult("name", "bean2")
                         .withTextLine("${ATTR.name} ${LVAL0} ${UNIT0}; ")

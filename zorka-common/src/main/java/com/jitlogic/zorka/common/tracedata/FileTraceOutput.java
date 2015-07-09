@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -31,7 +31,7 @@ import java.util.zip.DeflaterOutputStream;
  *
  * @author rafal.lewczuk@jitlogic.com
  */
-public class FileTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements TraceOutput {
+public class FileTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements TraceStreamOutput {
 
     private static final ZorkaLog log = ZorkaLogger.getLog(FileTraceOutput.class);
 
@@ -212,5 +212,4 @@ public class FileTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements
             log.error(ZorkaLogger.ZTR_ERRORS, "Cannot flush trace file " + path, e);
         }
     }
-
 }

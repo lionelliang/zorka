@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this software. If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jitlogic.zorka.common.zabbix;
+package com.jitlogic.zorka.core.integ.zabbix;
 
 
 import java.io.ByteArrayOutputStream;
@@ -28,18 +28,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import com.jitlogic.zorka.common.stats.AgentDiagnostics;
-import com.jitlogic.zorka.common.tracedata.MethodCallCounterRecord;
-import com.jitlogic.zorka.common.tracedata.MetricsRegistry;
-import com.jitlogic.zorka.common.tracedata.PerfRecord;
-import com.jitlogic.zorka.common.tracedata.PerfSample;
-import com.jitlogic.zorka.common.tracedata.SymbolRegistry;
-import com.jitlogic.zorka.common.tracedata.SymbolicException;
-import com.jitlogic.zorka.common.tracedata.SymbolicRecord;
-import com.jitlogic.zorka.common.tracedata.SymbolicStackElement;
-import com.jitlogic.zorka.common.tracedata.TraceMarker;
-import com.jitlogic.zorka.common.tracedata.TraceOutput;
-import com.jitlogic.zorka.common.tracedata.TraceRecord;
-import com.jitlogic.zorka.common.util.ZabbixUtils;
+import com.jitlogic.zorka.common.tracedata.*;
 import com.jitlogic.zorka.common.util.ZorkaAsyncThread;
 import com.jitlogic.zorka.common.util.ZorkaLog;
 import com.jitlogic.zorka.common.util.ZorkaLogger;
@@ -50,7 +39,7 @@ import com.jitlogic.zorka.common.util.ZorkaLogger;
  *
  * @author rafal.lewczuk@jitlogic.com
  */
-public class ZabbixTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements TraceOutput {
+public class ZabbixTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implements TraceStreamOutput {
 
 	private static ZorkaLog log = ZorkaLogger.getLog(ZabbixTraceOutput.class);
 
@@ -293,7 +282,7 @@ public class ZabbixTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implemen
 			result = new ActiveCheckResult();
 
 			result.setHost(hostname);
-			result.setKey(sample.getMetric().getName());
+			result.setKey(sample.getMetric().getDescription());
 			result.setValue(String.valueOf(sample.getValue()));
 			result.setLastlogsize(0);
 			result.setClock(clock);
@@ -429,5 +418,4 @@ public class ZabbixTraceOutput extends ZorkaAsyncThread<SymbolicRecord> implemen
 		log.debug(ZorkaLogger.ZAG_DEBUG, "### run()");
 		super.run();
 	}
-
 }

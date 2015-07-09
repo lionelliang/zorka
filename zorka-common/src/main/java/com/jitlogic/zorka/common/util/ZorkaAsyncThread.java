@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -16,6 +16,7 @@
 package com.jitlogic.zorka.common.util;
 
 import com.jitlogic.zorka.common.ZorkaService;
+import com.jitlogic.zorka.common.ZorkaSubmitter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  *            <p/>
  *            TODO factor out direct processing functionality (exposing process(), flush(), open(), close() etc.)
  */
-public abstract class ZorkaAsyncThread<T> implements Runnable, ZorkaService {
+public abstract class ZorkaAsyncThread<T> implements Runnable, ZorkaService, ZorkaSubmitter<T> {
 
     /**
      * Logger

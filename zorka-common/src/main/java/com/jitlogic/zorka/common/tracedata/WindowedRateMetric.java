@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -31,16 +31,16 @@ public class WindowedRateMetric extends Metric {
 
     private long lastNom, lastDiv;
 
-    public WindowedRateMetric(int id, String name, Map<String, Object> attrs) {
-        super(id, name, attrs);
+    public WindowedRateMetric(int id, String name, String description, Map<String, Object> attrs) {
+        super(id, name, description, attrs);
     }
 
-    public WindowedRateMetric(int id, int templateId, String name, Map<String, Object> attrs) {
-        super(id, templateId, name, attrs);
+    public WindowedRateMetric(int id, int templateId, String name, String description, Map<String, Object> attrs) {
+        super(id, templateId, name, description, attrs);
     }
 
-    public WindowedRateMetric(MetricTemplate template, String name, Map<String, Object> attrs) {
-        super(template, name, attrs);
+    public WindowedRateMetric(MetricTemplate template, String name, String description, Map<String, Object> attrs) {
+        super(template, name, description, attrs);
     }
 
     @Override

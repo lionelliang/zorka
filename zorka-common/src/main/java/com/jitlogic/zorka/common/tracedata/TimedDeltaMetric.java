@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -30,16 +30,16 @@ public class TimedDeltaMetric extends RawDeltaMetric {
      */
     private long lastClock;
 
-    public TimedDeltaMetric(int id, String name, Map<String, Object> attrs) {
-        super(id, name, attrs);
+    public TimedDeltaMetric(int id, String name, String description, Map<String, Object> attrs) {
+        super(id, name, description, attrs);
     }
 
-    public TimedDeltaMetric(int id, int templateId, String name, Map<String, Object> attrs) {
-        super(id, templateId, name, attrs);
+    public TimedDeltaMetric(int id, int templateId, String name, String description, Map<String, Object> attrs) {
+        super(id, templateId, name, description, attrs);
     }
 
-    public TimedDeltaMetric(MetricTemplate template, String name, Map<String, Object> attrs) {
-        super(template, name, attrs);
+    public TimedDeltaMetric(MetricTemplate template, String name, String description, Map<String, Object> attrs) {
+        super(template, name, description, attrs);
     }
 
     @Override

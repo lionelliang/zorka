@@ -1,5 +1,5 @@
 /**
- * Copyright 2012-2014 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
+ * Copyright 2012-2015 Rafal Lewczuk <rafal.lewczuk@jitlogic.com>
  * <p/>
  * This is free software. You can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -18,10 +18,10 @@ package com.jitlogic.zorka.common.tracedata;
 import java.io.OutputStream;
 
 /**
- * Objects implementing this interface can server output stream for
+ * Objects implementing this interface can serve output stream for
  * trace writer objects.
  */
-public interface TraceOutput {
+public interface TraceStreamOutput {
 
     /** Returns output stream for trace writer. */
     public OutputStream getOutputStream();
